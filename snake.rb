@@ -1,7 +1,7 @@
 require 'io/wait'
-require 'snake/ui'
-require 'snake/board'
-require 'snake/commands'
+require 'lib/ui'
+require 'lib/board'
+require 'lib/commands'
 
 module Snake
 
@@ -11,7 +11,7 @@ module Snake
 
   def self.setup_board!
     @board = Snake::Board.instance
-    @board.box_length = 80
+    @board.box_length = 50
     @board.box_width = 50
   end
   
@@ -28,8 +28,9 @@ module Snake
       if command
         snake.move(command)
       else
-        #slither around bitin' fools and hustling apples.
+        snake.move(snake.current_direction)
       end
+      sleep 0.2
     end
   ensure
     `stty #{term}`
