@@ -1,7 +1,7 @@
 require 'io/wait'
-require 'lib/ui'
-require 'lib/board'
-require 'lib/commands'
+require './lib/ui'
+require './lib/board'
+require './lib/commands'
 
 module Snake
 

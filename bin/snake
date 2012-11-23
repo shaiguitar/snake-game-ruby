@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-require 'snake'
+require './snake'
 
 Snake.setup_board!
 Snake.board.box_width = ARGV[0] if ARGV[0]
